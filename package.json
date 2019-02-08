@@ -1,0 +1,19 @@
+{
+  "name": "wastenot_whatnot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Jaleed96:Rache.12@github.com/Jaleed96/Wastenot_Whatnot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaleed96/Wastenot_Whatnot/issues"
+  },
+  "homepage": "https://github.com/Jaleed96/Wastenot_Whatnot#readme"
+}
