@@ -2,6 +2,7 @@ const vision = require('@google-cloud/vision');
 const client = new vision.ImageAnnotatorClient();
 const fs = require('fs');
 const exec = require('child_process').exec;
+const categories = require('./categories.json');
 
 async function fetchLabels(imageUri) {
   
@@ -16,8 +17,12 @@ async function fetchLabels(imageUri) {
     });
 
     const labels = result.labelAnnotations;
+    let params = [];
     console.log('Labels:');
-    labels.forEach(label => console.log(label.description));
+    labels.forEach(label => params.push(labels[label]));
+
+    console.log(getCategory(params));
+    
 }
 
 async function webDetect(imageUri) {
@@ -35,4 +40,11 @@ async function webDetect(imageUri) {
 
 }
 
-webDetect('./food-images/rotten-apple.jpg');
+fetchLabels('./food-images/rotten-apple.jpg');
+
+function getCategory(apiResponse) {
+    if (apiResponse[0]===categories.compost[2]) {
+        return categories.compost[2];
+    }
+    return "Couldn't find match";
+}
