@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Jaleed96/Wastenot_Whatnot#readme",
   "dependencies": {
-    "@google-cloud/vision": "^0.24.0"
+    "@google-cloud/vision": "^0.24.0",
+    "child_process": "^1.0.2",
+    "fs": "0.0.1-security"
   }
 }
