@@ -40,16 +40,33 @@ async function webDetect(imageUri) {
 }
 
 function getCategory(apiResponse) {
-    console.log(apiResponse[0]);
-    console.log(categories.compost[0]);
+    //console.log(apiResponse[0]);
+    console.log(categories.compost);
+    var response;
 
+    response = "Compost: \n";
+    for (var i = 0; i < apiResponse.length; i++)
+        for (var j = 0; j < categories.compost.length; j++)
+            if (apiResponse[i].toUpperCase() === categories.compost[j].toUpperCase())
+                response += apiResponse[i] + "\n";
 
+    response += "\nRecycle: \n"
+    for (var i = 0; i < apiResponse.length; i++) 
+        for (var j = 0; j < categories.recycle.length; j++)
+            if (apiResponse[i].toUpperCase() === categories.recycle[j].toUpperCase())
+                response += apiResponse[i] + "\n";
 
-    if (apiResponse[0].toUpperCase() === categories.compost[0].toUpperCase()) {
-        return "Compost: " + apiResponse[0];
-    }
+    response += "\nSpecial: \n"
+    for (var i = 0; i < apiResponse.length; i++) 
+        for (var j = 0; j < categories.special.length; j++)
+            if (apiResponse[i].toUpperCase() === categories.special[j].toUpperCase())
+                response += apiResponse[i] + "\n";
+            
+
+    if (response != null) 
+        return response;
 
     return "Couldn't find match";
 }
 
-fetchLabels('./food-images/rotten-apple.jpg');
+fetchLabels('./food-images/paper-plate.jpg');
