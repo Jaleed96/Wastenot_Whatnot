@@ -24,7 +24,7 @@ async function fetchLabels(imageUri) {
     console.log(getCategory(params));
     
 }
-
+// ================== Experimental Functions =====================
 async function webDetect(imageUri) {
     const [result] = await client.webDetection(imageUri);
 
@@ -39,6 +39,19 @@ async function webDetect(imageUri) {
     console.log(imageTitle);
 
 }
+
+async function getImageProperties(imageUri) {
+    const [result] = await client.imageProperties(imageUri);
+
+    fs.writeFile('test.json', JSON.stringify(result), 'utf8', (err) => {
+        if(err) {
+            console.error(err, err.stack);
+            return;
+        }
+    });
+}
+
+// ==================================================================
 
 function getCategory(apiResponse) {
     // console.log(JSON.stringify(apiResponse));
