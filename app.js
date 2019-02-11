@@ -19,7 +19,7 @@ async function fetchLabels(imageUri) {
     const labels = result.labelAnnotations;
     let params = [];
     console.log('Labels:');
-    labels.forEach(label => params.push(labels[label]));
+    labels.forEach(label => params.push(label.description));
 
     console.log(getCategory(params));
     
@@ -40,11 +40,33 @@ async function webDetect(imageUri) {
 
 }
 
-fetchLabels('./food-images/rotten-apple.jpg');
-
 function getCategory(apiResponse) {
-    if (apiResponse[0]===categories.compost[2]) {
-        return categories.compost[2];
-    }
+    // console.log(JSON.stringify(apiResponse));
+    let response;
+
+    response = "Compost: \n";
+    for (let i = 0; i < apiResponse.length; i++)
+        for (let j = 0; j < categories.compost.length; j++)
+            if (apiResponse[i].toUpperCase() === categories.compost[j].toUpperCase())
+                response += apiResponse[i] + "\n";
+
+    response += "\nRecycle: \n"
+    for (let i = 0; i < apiResponse.length; i++) 
+        for (let j = 0; j < categories.recycle.length; j++)
+            if (apiResponse[i].toUpperCase() === categories.recycle[j].toUpperCase())
+                response += apiResponse[i] + "\n";
+
+    response += "\nSpecial: \n"
+    for (let i = 0; i < apiResponse.length; i++) 
+        for (let j = 0; j < categories.special.length; j++)
+            if (apiResponse[i].toUpperCase() === categories.special[j].toUpperCase())
+                response += apiResponse[i] + "\n";
+            
+
+    if (response != null) 
+        return response;
+
     return "Couldn't find match";
 }
+
+fetchLabels('./food-images/rotten-apple.jpg');
