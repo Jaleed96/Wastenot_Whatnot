@@ -39,26 +39,28 @@ async function webDetect(imageUri) {
 
 }
 
+function determineAction(let ) {
+
+}
+
 function getCategory(apiResponse) {
-    //console.log(apiResponse[0]);
-    console.log(categories.compost);
-    var response;
+    let comResponse, reResponse, specResponse;
 
     response = "Compost: \n";
-    for (var i = 0; i < apiResponse.length; i++)
-        for (var j = 0; j < categories.compost.length; j++)
+    for (let i = 0; i < apiResponse.length; i++)
+        for (let j = 0; j < categories.compost.length; j++)
             if (apiResponse[i].toUpperCase() === categories.compost[j].toUpperCase())
                 response += apiResponse[i] + "\n";
 
     response += "\nRecycle: \n"
-    for (var i = 0; i < apiResponse.length; i++) 
-        for (var j = 0; j < categories.recycle.length; j++)
+    for (let i = 0; i < apiResponse.length; i++) 
+        for (let j = 0; j < categories.recycle.length; j++)
             if (apiResponse[i].toUpperCase() === categories.recycle[j].toUpperCase())
                 response += apiResponse[i] + "\n";
 
     response += "\nSpecial: \n"
-    for (var i = 0; i < apiResponse.length; i++) 
-        for (var j = 0; j < categories.special.length; j++)
+    for (let i = 0; i < apiResponse.length; i++) 
+        for (let j = 0; j < categories.special.length; j++)
             if (apiResponse[i].toUpperCase() === categories.special[j].toUpperCase())
                 response += apiResponse[i] + "\n";
             
@@ -69,4 +71,4 @@ function getCategory(apiResponse) {
     return "Couldn't find match";
 }
 
-fetchLabels('./food-images/paper-plate.jpg');
+fetchLabels('./food-images/index.jpg');
