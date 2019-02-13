@@ -54,7 +54,7 @@ async function getImageProperties(imageUri) {
 // ==================================================================
 
 function getCategory(apiResponse) {
-    // console.log(JSON.stringify(apiResponse));
+    console.log(JSON.stringify(apiResponse));
     let response;
 
     response = "Compost: \n";
