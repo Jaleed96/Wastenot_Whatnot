@@ -53,9 +53,23 @@ async function getImageProperties(imageUri) {
 
 // ==================================================================
 
+function determineAction(itemCategories) {
+
+}
+
 function getCategory(apiResponse) {
     console.log(JSON.stringify(apiResponse));
-    let response;
+    let categoriesFound = [];
+
+    // for (let category in categories) {
+    //     if(typeof(categories[category])!='object') {
+    //         for (let i = 0; i<categories[category].length; i++) {
+    //             if () {
+                    
+    //             }
+    //         }
+    //     }
+    // }
 
     response = "Compost: \n";
     for (let i = 0; i < apiResponse.length; i++)
