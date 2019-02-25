@@ -96,4 +96,4 @@ function getCategory(apiResponse) {
     return "Couldn't find match";
 }
 
-fetchLabels('./food-images/rotten-apple.jpg');
+fetchLabels('./food-images/takeaway-box.jpg');
