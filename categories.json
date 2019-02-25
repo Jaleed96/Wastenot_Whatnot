@@ -1,44 +1,49 @@
 
 {
-    "mixed-paper": [
-        "paper",
-        "newspaper",
-        "magazine",
-        "catalog",
-        "map",
-        "phonebook",
-        "mail",
-        "tissue",
-        "straw",
-        "book",
-        "envelope"
-    ],
+    "recycle": {
+        "mixed-paper": [
+            "paper",
+            "newspaper",
+            "magazine",
+            "catalog",
+            "map",
+            "phonebook",
+            "mail",
+            "tissue",
+            "straw",
+            "book",
+            "envelope"
+        ],
+        "cardboard": [
+            "paperboard",
+            "box",
+            "card",
+            "folder",
+            "cardboard",
+            "boxboard",
+            "bucket",
+            "office paper"
+        ]
+    },
+    
     "metal": [
         "metal",
         "spoon",
         "fork",
-        "tin",
-        "aluminum",
         "copper",
         "jewelry",
         "key",
         "steel",
-        "pot",
-        "pan",
-        "can"
+        "pan"
     ],
-    "glass": [
-        "glass",
-        "bottle",
-        "jar",
-        "pyrex"
-    ],
+    
 
-    "food-container": [
+    "mixed-container": [
         "paper",
         "plastic",
         "metal",
         "glass",
+        "aluminum",
         "carton",
         "cup",
         "dish",
@@ -46,19 +51,12 @@
         "tray",
         "cookware",
         "cup",
-        "jug"
+        "tin",
+        "jug",
+        "can",
+        "pot"
     ],
 
-    "cardboard": [
-        "paperboard",
-        "box",
-        "card",
-        "folder",
-        "cardboard",
-        "boxboard",
-        "bucket",
-        "office paper"
-    ],
     "electronics": [
         "battery",
         "computer",
@@ -83,13 +81,21 @@
         "portable computer"
     ],
 
-    "trash": [
-        "blind",
-        "curtain",
-        "vase",
-        "plastic",
-        "utensil"
-    ],
+    "garbage": {
+        "glass": [
+            "glass",
+            "bottle",
+            "jar",
+            "pyrex"
+        ],
+        "trash": [
+            "blind",
+            "curtain",
+            "vase",
+            "plastic",
+            "utensil"
+        ]
+    },
 
     "compost": [
         "food",
