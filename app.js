@@ -26,7 +26,6 @@ async function fetchLabels(imageUri) {
     //console.log(params);
 
     getCategory(params);
-    console.log(Object.keys(categories));
     
 }
 // ================== Experimental Functions =====================
@@ -93,17 +92,19 @@ function determineAction(itemCategories) {
 
 function getCategory(fetchedLabels) {
     let wasteCategories =[];
-    fetchedLabels.forEach(label=>{
-        let labelFound = matchLabels(label, categories);
-        if (labelFound) wasteCategories.push(label);
-    });
+    for (let i = 0; i<Object.keys(categories).length;i++) {
+        fetchedLabels.forEach(label=>{
+            //console.log(Object.keys(categories)[i]);
+            let labelFound = matchLabels(label, categories[Object.keys(categories)[i]]);
+            if (labelFound) wasteCategories.push(Object.keys(categories)[i]);
+        });
+    }
     console.log(wasteCategories);
 }
 
 function matchLabels(label, category) {
     if (typeof category == "object") {
         for (let cat in category) {
-            //console.log(label, " ", category[cat]);
             let res = matchLabels(label, category[cat]);
             if (res) return res;
         }
@@ -113,4 +114,4 @@ function matchLabels(label, category) {
     }
 }
 
-fetchLabels('./food-images/rotten-apple.jpg');
+fetchLabels('./food-images/takeaway-box.jpg');
