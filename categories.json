@@ -1,5 +1,5 @@
 {
-    "mixed-paper": [
+    "recycle": [
         "paper",
         "newspaper",
         "magazine",
@@ -10,9 +10,18 @@
         "tissue",
         "straw",
         "book",
-        "envelope"
-    ],
-    "metal": [
+        "envelope",
+        "paper",
+        "newspaper",
+        "magazine",
+        "catalog",
+        "map",
+        "phonebook",
+        "mail",
+        "tissue",
+        "straw",
+        "book",
+        "envelope",
         "metal",
         "spoon",
         "fork",
@@ -24,16 +33,11 @@
         "steel",
         "pot",
         "pan",
-        "can"
-    ],
-    "glass": [
+        "can",
         "glass",
         "bottle",
         "jar",
-        "pyrex"
-    ],
-
-    "food-container": [
+        "pyrex",
         "paper",
         "plastic",
         "metal",
@@ -45,10 +49,7 @@
         "tray",
         "cookware",
         "cup",
-        "jug"
-    ],
-
-    "cardboard": [
+        "jug",
         "paperboard",
         "box",
         "card",
@@ -58,38 +59,6 @@
         "bucket",
         "office paper"
     ],
-    "special": [
-        "battery",
-        "computer",
-        "electronics",
-        "bulb",
-        "microfilm",
-        "cell phone",
-        "phone",
-        "mobile phone",
-        "equipment",
-        "inkjet",
-        "cartridge",
-        "inkjet cardridge",
-        "cd",
-        "disk",
-        "tire",
-        "ink cartridge",
-        "tv",
-        "power cord",
-        "personal computer",
-        "laptop",
-        "portable computer"
-    ],
-
-    "trash": [
-        "blind",
-        "curtain",
-        "vase",
-        "plastic",
-        "utensil"
-    ],
-
     "compost": [
             "food",
             "rice",
