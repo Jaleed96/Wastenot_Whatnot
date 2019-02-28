@@ -58,37 +58,27 @@ async function getImageProperties(imageUri) {
 // ==================================================================
 
 function determineAction(itemCategories) {
+    if (itemCategories.includes("metal")) {
+        console.log("Please drop off metal waste at Vancouver Zero Waste Centre or a dedicated scrap metal bin");
+    }
+    if (itemCategories.includes("electronics")) {
+        console.log("Please recycle your electronics at a dedicated E-waste recycling facility");
+    }
+    if (itemCategories.includes("recycle")) {
+        console.log("Please use the yellow bin for disposal");
+    }
+    if (itemCategories.includes("compost")&&itemCategories.includes("mixed-container")) {
+        console.log("Please use the green bin for disposal");
+    } else if (itemCategories.includes("mixed-container")) {
+        console.log("Please use the blue bin for disposal");
+    } else if (itemCategories.includes("compost")) {
+        console.log("Please use the green bin for disposal");
+    }
+    if (itemCategories.includes("garbage")) {
+        console.log("Please use the black bin for disposal");
+    }
 
 }
-
-// function getCategory(apiResponse) {
-//     console.log(JSON.stringify(apiResponse));
-//     let categoriesFound = [];
-
-//     response = "Compost: \n";
-//     for (let i = 0; i < apiResponse.length; i++)
-//         for (let j = 0; j < categories.compost.length; j++)
-//             if (apiResponse[i].toUpperCase() === categories.compost[j].toUpperCase())
-//                 response += apiResponse[i] + "\n";
-
-//     response += "\nRecycle: \n"
-//     for (let i = 0; i < apiResponse.length; i++) 
-//         for (let j = 0; j < categories.recycle.length; j++)
-//             if (apiResponse[i].toUpperCase() === categories.recycle[j].toUpperCase())
-//                 response += apiResponse[i] + "\n";
-
-//     response += "\nSpecial: \n"
-//     for (let i = 0; i < apiResponse.length; i++) 
-//         for (let j = 0; j < categories.special.length; j++)
-//             if (apiResponse[i].toUpperCase() === categories.special[j].toUpperCase())
-//                 response += apiResponse[i] + "\n";
-            
-
-//     if (response != null) 
-//         return response;
-
-//     return "Couldn't find match";
-// }
 
 function getCategory(fetchedLabels) {
     let wasteCategories =[];
@@ -100,6 +90,7 @@ function getCategory(fetchedLabels) {
         });
     }
     console.log(wasteCategories);
+    determineAction(wasteCategories);
 }
 
 function matchLabels(label, category) {
@@ -114,4 +105,4 @@ function matchLabels(label, category) {
     }
 }
 
-fetchLabels('./food-images/takeaway-box.jpg');
+fetchLabels('./food-images/cans.jpg');
