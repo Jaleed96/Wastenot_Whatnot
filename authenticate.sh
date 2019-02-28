@@ -1,2 +1,2 @@
 #!/bin/bash
-export GOOGLE_APPLICATION_CREDENTIALS=/home/jay/Documents/gcpNodeAuth.json
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/Sam/documents/ai_sorting.json
